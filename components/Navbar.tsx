@@ -32,25 +32,25 @@ const Navbar = () => {
             <div className='hidden sm:flex'>
                 <ul className='hidden sm:flex'>
                     <Link href='/docs'>
-                        <li className='ml-10 capitalcase hover:border-b text-l'>Docs</li>
-                    </Link>
-                    <Link href='/forum'>
-                        <li className='ml-10 capitalcase hover:border-b text-l'>Forum</li>
-                    </Link>
-                    <Link href='/leaderboard'>
                         <li className='ml-10 capitalcase hover:border-b text-l'>Leaderboard</li>
+                    </Link>
+                    {/* <Link href='/forum'>
+                        <li className='ml-10 capitalcase hover:border-b text-l'>Docs</li>
+                    </Link> */}
+                    <Link href='/leaderboard'>
+                        <li className='ml-10 capitalcase hover:border-b text-l'>Submissions</li>
                     </Link>
                     <Link href='/my-account'>
                         <li className='ml-10 capitalcase hover:border-b text-l'>
-                            {/* <BiSolidUserCircle size={23} /> */}
-                            My Account
+                            <BiSolidUserCircle size={23} />
+                            {/* My Account */}
                         </li>
                     </Link>
-                    <Link href='/discord'>
+                    {/* <Link href='/discord'>
                         <li className='ml-10 capitalcase hover:border-b text-l'>
                             <BiLogoDiscordAlt size={23} />
                         </li>
-                    </Link>
+                    </Link> */}
                 </ul>
             </div>
             {/* Hamburger Menu for mobile */}
@@ -76,23 +76,23 @@ const Navbar = () => {
                             onClick={() => setMenuOpen(false)}
                             className='py-4 cursor-pointer'
                         >
-                            Docs
+                            Leaderboard
                         </li>
                     </Link>
-                    <Link href='/forum'>
+                    {/* <Link href='/forum'>
                         <li 
                             onClick={() => setMenuOpen(false)}
                             className='py-4 cursor-pointer'
                         >
-                            Forum
+                            Docs
                         </li>
-                    </Link>
+                    </Link> */}
                     <Link href='/leaderboard'>
                         <li 
                             onClick={() => setMenuOpen(false)}
                             className='py-4 cursor-pointer'
                         >
-                            Leaderboard
+                            Submissions
                         </li>
                     </Link>
                     <Link href='/my-account'>
@@ -100,8 +100,8 @@ const Navbar = () => {
                             onClick={() => setMenuOpen(false)}
                             className='py-4 cursor-pointer'
                         >
-                            {/* <BiSolidUserCircle size={23} /> */}
-                            My Account
+                            <BiSolidUserCircle size={23} />
+                            {/* My Account */}
                         </li>
                     </Link>                                          
                 </ul>
