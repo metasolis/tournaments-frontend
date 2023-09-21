@@ -1,4 +1,10 @@
 import React from 'react'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Tournament Submissions',
+  description: 'Dora Data Science Tournaments Submissions',
+}
 
 const Submissions = () => {
   return (
