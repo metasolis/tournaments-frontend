@@ -3,7 +3,8 @@ import React from 'react'
 const Submissions = () => {
   return (
     <div className='flex justify-between items-center h-full w-full px-4 2xl:px-16'>
-    Submissions</div>
+      <h1 className="text-5xl font-extrabold dark:text-white">Submissions</h1>
+    </div>
   )
 }
 

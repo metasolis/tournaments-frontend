@@ -1,7 +1,7 @@
 'use client'        // tells nextjs that this is client-side rendering for components like useState
 import React from 'react'
 import Image from 'next/image'
-import Logo from '../app/Logo.png'
+import Logo from '../Logo.png'
 import Link from 'next/link'
 import {AiOutlineMenu, AiOutlineClose, AiOutlineTwitter, AiFillRedditCircle, AiFillGithub} from 'react-icons/ai'
 import {BiLogoDiscordAlt, BiLogoDiscourse, BiSolidUserCircle} from 'react-icons/bi'
@@ -17,7 +17,7 @@ const Navbar = () => {
     }
 
   return (
-    <nav className='fixed w-full h-24 shadow-xl'>
+    <nav className='sticky top-0 w-full h-24 shadow-xl'>            {/* Sticky Navbar */} 
         <div className='flex justify-between items-center h-full w-full px-4 2xl:px-16'>
             <Link href='/'>
             <Image
@@ -31,16 +31,16 @@ const Navbar = () => {
             </Link>
             <div className='hidden sm:flex'>
                 <ul className='hidden sm:flex'>
-                    <Link href='/docs'>
+                    <Link href='/leaderboard'>
                         <li className='ml-10 capitalcase hover:border-b text-l'>Leaderboard</li>
                     </Link>
                     {/* <Link href='/forum'>
                         <li className='ml-10 capitalcase hover:border-b text-l'>Docs</li>
                     </Link> */}
-                    <Link href='/leaderboard'>
+                    <Link href='/submissions'>
                         <li className='ml-10 capitalcase hover:border-b text-l'>Submissions</li>
                     </Link>
-                    <Link href='/my-account'>
+                    <Link href='/account'>
                         <li className='ml-10 capitalcase hover:border-b text-l'>
                             <BiSolidUserCircle size={23} />
                             {/* My Account */}
@@ -71,7 +71,7 @@ const Navbar = () => {
             </div>
             <div className='flex-col py-4'>
                 <ul>
-                    <Link href='/docs'>
+                    <Link href='/leaderboard'>
                         <li 
                             onClick={() => setMenuOpen(false)}
                             className='py-4 cursor-pointer'
@@ -87,7 +87,7 @@ const Navbar = () => {
                             Docs
                         </li>
                     </Link> */}
-                    <Link href='/leaderboard'>
+                    <Link href='/submissions'>
                         <li 
                             onClick={() => setMenuOpen(false)}
                             className='py-4 cursor-pointer'
@@ -95,7 +95,7 @@ const Navbar = () => {
                             Submissions
                         </li>
                     </Link>
-                    <Link href='/my-account'>
+                    <Link href='/account'>
                         <li 
                             onClick={() => setMenuOpen(false)}
                             className='py-4 cursor-pointer'
