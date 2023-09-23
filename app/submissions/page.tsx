@@ -1,10 +1,13 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 // import type { Metadata } from 'next'
+import Link from 'next/link'
 import {GiTwoCoins} from 'react-icons/gi'
 import {HiMiniCpuChip} from 'react-icons/hi2'
 import {MdCloudUpload} from 'react-icons/md'
-
+import Image from 'next/image'
+import Trophy from "../trophy.png";
+import ManageStake from '../manage-stake/page'
 
 // export const metadata: Metadata = {
 //   title: 'Tournament Submissions',
@@ -12,6 +15,9 @@ import {MdCloudUpload} from 'react-icons/md'
 // }
 
 const Submissions = () => {
+
+  const [showModal, setShowModal] = useState(false);
+
   return (
 
     <div className='flex-none justify-between items-center h-full w-full px-20 2xl:px-16'>
@@ -58,7 +64,9 @@ const Submissions = () => {
             <div className="table-cell text-center pt-5">Aug 3 10:27 UTC</div>
             <div className="table-cell text-center pt-5">
               <div className='flex justify-center'>
-                  <GiTwoCoins size={23} className='cursor-pointer' />
+                {/* <Link href='/manage-stake'> */}
+                  <GiTwoCoins size={23} className='cursor-pointer' onClick={() => setShowModal(true)}/>
+                {/* </Link> */}
               </div>  
             </div>
             <div className="table-cell text-center pt-5">
@@ -115,82 +123,26 @@ const Submissions = () => {
             </div>
           </div>
 
+        </div>
+
       </div>
-        {/* <table className="table-fixed w-full">
-          <thead>
-            <tr>
-              <th className="text-left">Model Name</th>
-              <th>Submissions</th>
-              <th>Latest Submission</th>
-              <th>Stake</th>
-              <th>Manage Compute</th>
-              <th>Upload Model</th>
-            </tr>
-          </thead>
-          <tbody className="text-center">
-            <tr>
-              <td className="text-left">Model698</td>
-              <td>3</td>
-              <td>Aug 3 10:27 UTC</td>
-              <td>
-                <div className='flex justify-center'>
-                  <GiTwoCoins size={23} className='cursor-pointer' />
-                </div>
-              </td>
-              <td>
-                <div className='flex justify-center'>
-                  <HiMiniCpuChip size={23} className='cursor-pointer' />
-                </div>
-              </td>
-              <td>
-                <div className='flex justify-center'>
-                  <MdCloudUpload size={23} className='cursor-pointer' />
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td className="text-left">Kesslr34</td>
-              <td>5</td>
-              <td>Jan 29 13:25 UTC</td>
-              <td>
-                <div className='flex justify-center'>
-                  <GiTwoCoins size={23} className='cursor-pointer' />
-                </div>
-              </td>
-              <td>
-                <div className='flex justify-center'>
-                  <HiMiniCpuChip size={23} className='cursor-pointer' />
-                </div>
-              </td>
-              <td>
-                <div className='flex justify-center'>
-                  <MdCloudUpload size={23} className='cursor-pointer' />
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td className="text-left">Model_Lagran</td>
-              <td>1</td>
-              <td>Nov 17 17:39 UTC</td>
-              <td>
-                <div className='flex justify-center'>
-                  <GiTwoCoins size={23} className='cursor-pointer' />
-                </div>
-              </td>
-              <td>
-                <div className='flex justify-center'>
-                  <HiMiniCpuChip size={23} className='cursor-pointer' />
-                </div>
-              </td>
-              <td>
-                <div className='flex justify-center'>
-                  <MdCloudUpload size={23} className='cursor-pointer' />
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table> */}
-      </div>
+
+      {showModal ? ( 
+      // <ManageStake value={[menuEnterPage, setMenuEnterPage]}/>
+        <div className="mt-10 flex justify-center items-center flex-col w-72 rounded-lg shadow-xl h-auto p-2">
+          <Image src={Trophy} width={100} height={100} objectFit="contain" />
+          <h2 className="text-base mt-2 mx-4 text-gray-400 font-semibold text-center">
+            May your life be filled with success and achievements.
+            Congratulations!
+          </h2>
+          <button
+            className="my-5 w-auto px-8 h-10 bg-blue-600 text-white rounded-md shadow hover:shadow-lg font-semibold"
+            onClick={() => setShowModal(false)}
+          >
+            Stake
+          </button>
+        </div>
+      ) : null}
 
     </div>
   )
