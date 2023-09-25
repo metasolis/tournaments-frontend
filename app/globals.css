@@ -12,8 +12,8 @@
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 14, 25, 41;   /*#0E1929*/
-    --background-end-rgb: 14, 25, 41;     /*#0E1929*/
-  }
+    --background-end-rgb: 14, 25, 41;     /*#0E1929*/     /*Gold: #E9A664 or rgb(233 166 100) */
+  }                                 
 }
 
 body {
