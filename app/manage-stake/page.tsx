@@ -44,6 +44,9 @@ const ManageStake = () => {
             <Dropdown.Item>
               Model_Lagran
             </Dropdown.Item>
+            <Dropdown.Item>
+              ModelCA
+            </Dropdown.Item>
           </Dropdown>
         </div>
 

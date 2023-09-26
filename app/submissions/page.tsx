@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 // import type { Metadata } from 'next'
 import Link from 'next/link'
 import {GiTwoCoins} from 'react-icons/gi'
@@ -17,6 +17,37 @@ import ManageStake from '../manage-stake/page'
 const Submissions = () => {
 
   const [showModal, setShowModal] = useState(false);
+  const [file, setFile] = useState<File>()
+
+  // https://stackoverflow.com/questions/37457128/react-open-file-browser-on-click-a-div
+  const inputFile = useRef<HTMLInputElement | null>(null);    
+  const onButtonClick = () => {
+    // `current` points to the mounted file input element
+    if (inputFile.current !== null) {
+      inputFile.current.click();
+    }
+  };
+
+  // // https://ethanmick.com/how-to-upload-a-file-in-next-js-13-app-directory/
+  // const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault()
+  //   if (!file) return
+
+  //   try {
+  //     const data = new FormData()
+  //     data.set('file', file)
+
+  //     const res = await fetch('/api/upload', {
+  //       method: 'POST',
+  //       body: data
+  //     })
+  //     // handle the error
+  //     if (!res.ok) throw new Error(await res.text())
+  //   } catch (e: any) {
+  //     // Handle errors here
+  //     console.error(e)
+  //   }
+  // }
 
   return (
 
@@ -26,8 +57,8 @@ const Submissions = () => {
         <table className="table-auto w-full">
           <thead>
             <tr>
-              <th><h4 className="text-4xl font-bold dark:text-white text-left">Submissions (Nagata_270)</h4></th>
-              <th><h5 className="text-2xl font-bold dark:text-white text-right">Current Tournament: 3</h5></th>
+              <th><h4 className="text-4xl font-bold text-watchtower-gold text-left">Submissions (Nagata_270)</h4></th>
+              <th><h5 className="text-2xl font-bold text-watchtower-gold text-right">Current Tournament: 3</h5></th>
             </tr>
           </thead>
         </table>
@@ -37,7 +68,7 @@ const Submissions = () => {
         <table className="table-auto w-full">
           <thead>
             <tr>
-              <th><h4 className="text-2xl font-bold dark:text-white text-left">Models (3)</h4></th>
+              <th><h4 className="text-2xl font-bold text-watchtower-gold text-left">Models (4)</h4></th>
             </tr>
           </thead>
         </table>
@@ -46,7 +77,7 @@ const Submissions = () => {
       <div className="table w-full p-5 pt-10">
 
         <div className="table-header-group">
-          <div className="table-row font-extrabold">
+          <div className="table-row font-extrabold text-watchtower-gold">
             <div className="table-cell text-left">Model Name</div>
             <div className="table-cell text-center">Submissions</div>
             <div className="table-cell text-center">Latest Submission</div>
@@ -75,8 +106,21 @@ const Submissions = () => {
               </div>
             </div>
             <div className="table-cell text-center pt-5">
-              <div className='flex justify-center'>
-                <MdCloudUpload size={23} className='cursor-pointer' />
+              <div className='flex justify-center input-container'>
+                {/* <form onSubmit={onSubmit}> */}
+                  {/* <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => setFile(e.target.files?.[0])}
+                  /> */}
+                  
+                  <input type='file' id='file' ref={inputFile} style={{display: 'none'}} />
+
+                  <button onClick={onButtonClick}><MdCloudUpload size={23} className='cursor-pointer' /></button>
+
+                  {/* <MdCloudUpload size={23} className='cursor-pointer' /> */}
+                {/* </form> */}
+                
               </div>
             </div>
           </div>
@@ -122,6 +166,27 @@ const Submissions = () => {
               </div>
             </div>
           </div>
+
+          <div className="table-row">
+            <div className="table-cell text-left pt-5">ModelCA</div>
+            <div className="table-cell text-center pt-5">7</div>
+            <div className="table-cell text-center pt-5">Sept 21 10:45 UTC</div>
+            <div className="table-cell text-center pt-5">
+              <div className='flex justify-center'>
+                  <GiTwoCoins size={23} className='cursor-pointer' />
+              </div>  
+            </div>
+            <div className="table-cell text-center pt-5">
+              <div className='flex justify-center'>
+                <HiMiniCpuChip size={23} className='cursor-pointer' />
+              </div>
+            </div>
+            <div className="table-cell text-center pt-5">
+              <div className='flex justify-center'>
+                <MdCloudUpload size={23} className='cursor-pointer' />
+              </div>
+            </div>
+          </div>          
 
         </div>
 
