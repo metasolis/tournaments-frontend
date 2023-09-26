@@ -57,7 +57,7 @@ const Submissions = () => {
         <table className="table-auto w-full">
           <thead>
             <tr>
-              <th><h4 className="text-4xl font-bold text-watchtower-gold text-left">Submissions (Nagata_270)</h4></th>
+              <th><h4 className="text-4xl font-bold text-watchtower-gold text-left">My Submissions (Nagata_270)</h4></th>
               <th><h5 className="text-2xl font-bold text-watchtower-gold text-right">Current Tournament: 3</h5></th>
             </tr>
           </thead>
@@ -82,8 +82,8 @@ const Submissions = () => {
             <div className="table-cell text-center">Submissions</div>
             <div className="table-cell text-center">Latest Submission</div>
             <div className="table-cell text-center">Stake</div>
-            <div className="table-cell text-center">Manage Compute</div>
-            <div className="table-cell text-center">Upload Model</div>
+            {/* <div className="table-cell text-center">Manage Compute</div> */}
+            <div className="table-cell text-center">Upload Submission</div>
           </div>
         </div>
 
@@ -100,11 +100,11 @@ const Submissions = () => {
                 {/* </Link> */}
               </div>  
             </div>
-            <div className="table-cell text-center pt-5">
+            {/* <div className="table-cell text-center pt-5">
               <div className='flex justify-center'>
                 <HiMiniCpuChip size={23} className='cursor-pointer' />
               </div>
-            </div>
+            </div> */}
             <div className="table-cell text-center pt-5">
               <div className='flex justify-center input-container'>
                 {/* <form onSubmit={onSubmit}> */}
@@ -134,14 +134,15 @@ const Submissions = () => {
                   <GiTwoCoins size={23} className='cursor-pointer' />
               </div>  
             </div>
-            <div className="table-cell text-center pt-5">
+            {/* <div className="table-cell text-center pt-5">
               <div className='flex justify-center'>
                 <HiMiniCpuChip size={23} className='cursor-pointer' />
               </div>
-            </div>
+            </div> */}
             <div className="table-cell text-center pt-5">
               <div className='flex justify-center'>
-                <MdCloudUpload size={23} className='cursor-pointer' />
+                <input type='file' id='file' ref={inputFile} style={{display: 'none'}} />
+                <button onClick={onButtonClick}><MdCloudUpload size={23} className='cursor-pointer' /></button>
               </div>
             </div>
           </div>
@@ -155,14 +156,15 @@ const Submissions = () => {
                   <GiTwoCoins size={23} className='cursor-pointer' />
               </div>  
             </div>
-            <div className="table-cell text-center pt-5">
+            {/* <div className="table-cell text-center pt-5">
               <div className='flex justify-center'>
                 <HiMiniCpuChip size={23} className='cursor-pointer' />
               </div>
-            </div>
+            </div> */}
             <div className="table-cell text-center pt-5">
               <div className='flex justify-center'>
-                <MdCloudUpload size={23} className='cursor-pointer' />
+                <input type='file' id='file' ref={inputFile} style={{display: 'none'}} />
+                <button onClick={onButtonClick}><MdCloudUpload size={23} className='cursor-pointer' /></button>
               </div>
             </div>
           </div>
@@ -176,14 +178,15 @@ const Submissions = () => {
                   <GiTwoCoins size={23} className='cursor-pointer' />
               </div>  
             </div>
-            <div className="table-cell text-center pt-5">
+            {/* <div className="table-cell text-center pt-5">
               <div className='flex justify-center'>
                 <HiMiniCpuChip size={23} className='cursor-pointer' />
               </div>
-            </div>
+            </div> */}
             <div className="table-cell text-center pt-5">
               <div className='flex justify-center'>
-                <MdCloudUpload size={23} className='cursor-pointer' />
+                <input type='file' id='file' ref={inputFile} style={{display: 'none'}} />
+                <button onClick={onButtonClick}><MdCloudUpload size={23} className='cursor-pointer' /></button>
               </div>
             </div>
           </div>          
