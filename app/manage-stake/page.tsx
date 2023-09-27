@@ -1,7 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-import Image from "next/image";
-import Trophy from "../trophy.png";
 import { Dropdown } from "flowbite-react";
 import Tabs from '../components/Tabs';
 
@@ -10,7 +8,7 @@ const ManageStake = () => {
 
   return (
     // <div>ManageStake</div>
-    <div className='flex justify-center items-center h-full w-full px-20 2xl:px-16'>
+    <div className='flex justify-center items-center h-auto w-50 px-20 bg-watchtower-blue'>
       <div className="mt-10 flex justify-center flex-col w-75 rounded-lg shadow-xl h-auto p-7 border-solid border-2 border-watchtower-gold">
         {/* Heading */}
         <h1 className='text-base p-5 text-white-400 font-bold text-left uppercase'>Manage Stake</h1>
@@ -78,14 +76,7 @@ const ManageStake = () => {
         
 
 
-        <Image src={Trophy} width={100} height={100} objectFit="contain" />
-        <h2 className="text-base mt-2 mx-4 text-gray-400 font-semibold text-center">
-          May your life be filled with success and achievements.
-          Congratulations!
-        </h2>
-        <button className="my-5 w-auto px-8 h-10 bg-blue-600 text-white rounded-md shadow hover:shadow-lg font-semibold">
-          Stake
-        </button>
+        
       </div>
     </div>
   );

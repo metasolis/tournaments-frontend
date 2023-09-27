@@ -16,8 +16,8 @@ import ManageStake from '../manage-stake/page'
 
 const Submissions = () => {
 
-  const [showModal, setShowModal] = useState(false);
-  const [file, setFile] = useState<File>()
+  // const [showModal, setShowModal] = useState(false);
+  // const [file, setFile] = useState<File>()
 
   // https://stackoverflow.com/questions/37457128/react-open-file-browser-on-click-a-div
   const inputFile = useRef<HTMLInputElement | null>(null);    
@@ -195,7 +195,7 @@ const Submissions = () => {
 
       </div>
 
-      {showModal ? ( 
+      {/* {showModal ? ( 
       // <ManageStake value={[menuEnterPage, setMenuEnterPage]}/>
         <div className="mt-10 flex justify-center items-center flex-col w-72 rounded-lg shadow-xl h-auto p-2">
           <Image src={Trophy} width={100} height={100} objectFit="contain" />
@@ -210,7 +210,7 @@ const Submissions = () => {
             Stake
           </button>
         </div>
-      ) : null}
+      ) : null} */}
 
     </div>
   )
