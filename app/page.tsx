@@ -1,5 +1,13 @@
 
+'use client'
+import React, { useEffect } from 'react'
+
 export default function Home() {
+
+  // useEffect(() => {
+  //   import("preline")
+  // }, [])
+
   return (
     // <main className="overflow-hidden">
     <main>

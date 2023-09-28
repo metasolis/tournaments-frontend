@@ -1,10 +1,16 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Image from "next/image";
 import {TbDiscountCheckFilled} from 'react-icons/tb'
+import Trophy from "../check.png";
 
 export default function Tabs() {
+
+    const [showModal, setShowModal] = useState(false);
+
     return (
       <div className='py-10'>
+
         <div className="border-b border-gray-200 px-4 dark:border-gray-700">
         <nav className="flex space-x-2" aria-label="Tabs" role="tablist">
             <button type="button" className="hs-tab-active:bg-blue-600 hs-tab-active:text-white font-bold uppercase basis-0 grow py-3 px-4 inline-flex justify-center items-center gap-2 bg-transparent text-center text-sm font-medium text-center text-gray-500 rounded-lg hover:text-white dark:hover:text-white active" id="equal-width-elements-item-1" data-hs-tab="#equal-width-elements-1" aria-controls="equal-width-elements-1" role="tab">
@@ -18,12 +24,14 @@ export default function Tabs() {
             </button>
         </nav>
         </div>
-  
-        <div className="mt-3">
+    
+
+       <div className="mt-3">
 
 
             {/* Stake Card */}
             <div id="equal-width-elements-1" role="tabpanel" aria-labelledby="equal-width-elements-item-1">
+ 
                 <div className='flex-auto justify-center items-center h-auto w-auto p-2'>
 
                     {/* Amount Heading */}
@@ -68,14 +76,14 @@ export default function Tabs() {
 
                     {/* Confirm Stake Button */}
                     <div className="flex justify-center items-center">
-                        <button className="my-5 px-10 py-3 bg-watchtower-gold content-center text-black rounded-md shadow hover:shadow-lg font-bold" >
+                        <button className="my-5 px-10 py-3 bg-watchtower-gold content-center text-black rounded-md shadow hover:shadow-lg font-bold" onClick={() => setShowModal(true)} >
                         <div className="flex justify-center items-center">
                             <TbDiscountCheckFilled size={20} />Confirm Stake
                         </div>
                         </button>
                     </div>
 
-                </div>
+                </div>                 
 
             </div>
             
@@ -143,7 +151,24 @@ export default function Tabs() {
                 </p>
             </div>
             </div>
+
+            {/* Popup */} 
+            {showModal ? (
+                <div className="mt-10 flex justify-center flex-col rounded-lg shadow-xl h-auto p-7 border-solid border-2 border-watchtower-gold backdrop-brightness-75">
+                  <Image src={Trophy} width={100} height={100} objectFit="contain" className='items-center'/>
+                  <h2 className="text-base mt-2 mx-4 text-white uppercase font-semibold text-center">Staked!
+                  </h2>
+                  <button
+                    className="my-5 w-auto p-18 h-10 bg-blue-600 text-white rounded-md shadow hover:shadow-lg font-semibold"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Close
+                  </button>
+                </div>
+              ) : null}            
+
       </div>
+
     );
   }
   
