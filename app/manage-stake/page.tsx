@@ -8,7 +8,7 @@ const ManageStake = () => {
 
   return (
     // <div>ManageStake</div>
-    <div className='flex justify-center items-center h-auto w-50 px-20 bg-watchtower-blue'>
+    <div className='flex-none justify-center items-center h-auto w-50 px-20 bg-watchtower-blue'>
       <div className="mt-10 flex justify-center flex-col w-75 rounded-lg shadow-xl h-auto p-7 border-solid border-2 border-watchtower-gold">
         {/* Heading */}
         <h1 className='text-base p-5 text-white-400 font-bold text-left uppercase'>Manage Stake</h1>
@@ -59,10 +59,10 @@ const ManageStake = () => {
               <div className="table-cell text-left font-bold">Model Name</div>
               <div className="table-cell text-right">Model698</div>
             </div>
-            <div className="table-row">
+            {/* <div className="table-row">
               <div className="table-cell text-left font-bold">Amount to Stake</div>
               <div className="table-cell text-right">1 WTR</div>
-            </div>
+            </div> */}
             <div className="table-row">
                 <div className="table-cell text-left font-bold">Preferred Payout</div>
                 <div className="table-cell text-right">Compound</div>

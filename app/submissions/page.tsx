@@ -95,9 +95,9 @@ const Submissions = () => {
             <div className="table-cell text-center pt-5">Aug 3 10:27 UTC</div>
             <div className="table-cell text-center pt-5">
               <div className='flex justify-center'>
-                {/* <Link href='/manage-stake'> */}
-                  <GiTwoCoins size={23} className='cursor-pointer' onClick={() => setShowModal(true)}/>
-                {/* </Link> */}
+                <Link href='/manage-stake'>
+                  <GiTwoCoins size={23} className='cursor-pointer' />
+                </Link>
               </div>  
             </div>
             {/* <div className="table-cell text-center pt-5">
@@ -131,7 +131,9 @@ const Submissions = () => {
             <div className="table-cell text-center pt-5">Jan 29 13:25 UTC</div>
             <div className="table-cell text-center pt-5">
               <div className='flex justify-center'>
+                {/* <Link href='/account'> */}
                   <GiTwoCoins size={23} className='cursor-pointer' />
+                {/* </Link> */}
               </div>  
             </div>
             {/* <div className="table-cell text-center pt-5">
