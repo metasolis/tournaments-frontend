@@ -156,7 +156,7 @@ export default function Tabs() {
             {showModal ? (
                 <div className="mt-1 flex justify-center flex-col rounded-lg shadow-xl h-auto p-3 border-solid border-2 border-watchtower-gold backdrop-brightness-75">
                     <div className="flex justify-center py-7 items-center">
-                        <Image src={Trophy} width={100} height={100} objectFit="contain" className='items-center'/>
+                        <Image src={Trophy} alt='check-mark' width={100} height={100} objectFit="contain" className='items-center'/>
                     </div>
                   <h2 className="text-base mt-2 mx-4 text-white uppercase font-semibold text-center">Staked!
                   </h2>
