@@ -135,7 +135,7 @@ export default function Tabs() {
 
                 {/* Confirm Stake Button */}
                 <div className="flex justify-center items-center">
-                    <button className="my-5 px-10 py-3 bg-watchtower-gold content-center text-black rounded-md shadow hover:shadow-lg font-bold" >
+                    <button className="my-5 px-10 pt-3 bg-watchtower-gold content-center text-black rounded-md shadow hover:shadow-lg font-bold" >
                     <div className="flex justify-center items-center">
                         <TbDiscountCheckFilled size={20} />Confirm Stake
                     </div>
@@ -154,8 +154,10 @@ export default function Tabs() {
 
             {/* Popup */} 
             {showModal ? (
-                <div className="mt-10 flex justify-center flex-col rounded-lg shadow-xl h-auto p-7 border-solid border-2 border-watchtower-gold backdrop-brightness-75">
-                  <Image src={Trophy} width={100} height={100} objectFit="contain" className='items-center'/>
+                <div className="mt-1 flex justify-center flex-col rounded-lg shadow-xl h-auto p-3 border-solid border-2 border-watchtower-gold backdrop-brightness-75">
+                    <div className="flex justify-center py-7 items-center">
+                        <Image src={Trophy} width={100} height={100} objectFit="contain" className='items-center'/>
+                    </div>
                   <h2 className="text-base mt-2 mx-4 text-white uppercase font-semibold text-center">Staked!
                   </h2>
                   <button
