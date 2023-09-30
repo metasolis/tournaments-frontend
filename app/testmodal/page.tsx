@@ -22,7 +22,7 @@ const TestModals = () => {
       </div>
       {showModal ? (
         <div className="mt-10 flex justify-center items-center flex-col w-72 rounded-lg shadow-xl h-auto p-2">
-          <Image src={Trophy} width={100} height={100} objectFit="contain" />
+          <Image src={Trophy} alt='test-check-mark' width={100} height={100} objectFit="contain" />
           <h2 className="text-base mt-2 mx-4 text-gray-400 font-semibold text-center">
             May your life be filled with success and achievements.
             Congratulations!

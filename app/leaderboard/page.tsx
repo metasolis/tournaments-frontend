@@ -20,7 +20,7 @@ const Leaderboard = () => {
     <div className='flex-none justify-between items-center h-full w-full px-20 2xl:px-16'>
 
       <div className="mt-10 flex justify-center items-center flex-col w-75 rounded-lg h-auto p-2">
-        <Image src={Trophy} alt='check-mark' width={100} height={100} objectFit="contain" />
+        <Image src={Trophy} alt='leaderboard-trophy' width={100} height={100} objectFit="contain" />
       </div>
 
       <div className="p-5">
