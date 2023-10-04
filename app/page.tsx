@@ -2,6 +2,7 @@
 'use client'
 import React, { useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import HeroImage from './spaceDebris.gif'
 import CustomButton from './components/CustomButton'
 
@@ -28,11 +29,13 @@ export default function Home() {
           Predict Spacecraft Collision Risk
         </p>
 
-        <CustomButton
-          title="Join the movement"
-          containerStyles="bg-watchtower-ocean text-white rounded-full mt-10"
-          // handleClick={handleScroll}
-        />
+        <Link href='/leaderboard'>
+          <CustomButton
+            title="Join the movement"
+            containerStyles="bg-watchtower-ocean text-white rounded-full mt-10"
+            // handleClick={handleScroll}
+          />
+        </Link>          
 
       </div>
       <div className="flex justify-center items-center w-full xl:h-screen">
