@@ -1,8 +1,34 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
+import { supabase } from '../client'
+import { useRouter } from 'next/router';
 
 const MyAccount = () => {
+
+  const [profile, setProfile] = useState(null)
+  const router = useRouter()
+
+  useEffect(() => {
+    fetchProfile()
+  }, [])
+
+  async function fetchProfile() {
+    const { data: {user} } = await supabase.auth.getUser()
+    if (!profile) {
+      router.push('/auth')
+    } else {
+      setProfile(user)
+    }
+  }
+
+  if (!profile) return null   // User had no profile/account
+    
+  // User has a profile/account
   return (
     <div className='flex-none justify-between items-center h-full w-full px-20 2xl:px-16'>
+
+      <h2>Hello, {profile.email}</h2>
+      <p>User ID: {profile.id}</p>
 
       {/* Profile Pic and Name */}
       <div className="p-5 pt-20">
