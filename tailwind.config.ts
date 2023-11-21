@@ -24,6 +24,7 @@ const config: Config = {
     },
   },
   plugins: [
+    require('@tailwindcss/forms'),
     require("flowbite/plugin"),
     require('preline/plugin'),
   ],
